@@ -1,4 +1,4 @@
-{% set version = "0.20-137" %}
+{% set version = "0.21-247" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RhpcBLASctl_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RhpcBLASctl/RhpcBLASctl_{{ version }}.tar.gz
-  sha256: db02cbdad32fc54bc60bb27baf0799e919c09c09710c33bf72c741f93421616f
+  sha256: 629f5145c47e8e481d8f513a9841ee600d91246593b5ffef07aa1b39af334724
 
 build:
   merge_build_host: true  # [win]
@@ -21,7 +21,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed               # [win]
@@ -33,6 +33,7 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
   run:
@@ -46,10 +47,11 @@ test:
 
 about:
   home: http://prs.ism.ac.jp/~nakama/Rhpc/
-  license: AGPL-3
+  license: AGPL-3.0-only
   summary: Control the number of threads on 'BLAS' (Aka 'GotoBLAS', 'OpenBLAS', 'ACML', 'BLIS' and 'MKL'). And possible to control the number of threads in 'OpenMP'. Get a number of logical cores and physical cores if feasible.
   license_family: AGPL
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/AGPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/AGPL-3
 
 extra:
   recipe-maintainers:

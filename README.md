@@ -3,7 +3,7 @@ About r-rhpcblasctl
 
 Home: http://prs.ism.ac.jp/~nakama/Rhpc/
 
-Package license: AGPL-3
+Package license: AGPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rhpcblasctl-feedstock/blob/master/LICENSE.txt)
 
