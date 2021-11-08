@@ -1,4 +1,4 @@
-{% set version = "0.21-247" %}
+{% set version = "0.21-247.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/RhpcBLASctl_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/RhpcBLASctl/RhpcBLASctl_{{ version }}.tar.gz
-  sha256: 629f5145c47e8e481d8f513a9841ee600d91246593b5ffef07aa1b39af334724
+  sha256: 5be55fd5ddd8173167a48b9f072835a34062ad0268308f2b3fbd1781a5c99769
 
 build:
   merge_build_host: true  # [win]
