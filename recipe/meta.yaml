@@ -21,9 +21,9 @@ build:
 
 requirements:
   build:
-    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}sed               # [win]
     - {{ posix }}grep              # [win]
@@ -35,6 +35,8 @@ requirements:
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - libgomp                      # [linux]
+    - llvm-openmp                  # [osx]
   host:
     - r-base
   run:
@@ -47,7 +49,7 @@ test:
     - "\"%R%\" -e \"library('RhpcBLASctl')\""  # [win]
 
 about:
-  home: http://prs.ism.ac.jp/~nakama/Rhpc/
+  home: https://prs.ism.ac.jp/~nakama/Rhpc/
   license: AGPL-3.0-only
   summary: Control the number of threads on 'BLAS' (Aka 'GotoBLAS', 'OpenBLAS', 'ACML', 'BLIS' and 'MKL'). And possible to control the number of threads in 'OpenMP'. Get a number of logical cores and physical cores if feasible.
   license_family: AGPL
@@ -57,18 +59,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: RhpcBLASctl
-# Version: 0.18-205
-# Date: 2018-07-24
-# Title: Control the Number of Threads on 'BLAS'
-# Author: Junji NAKANO <nakanoj@ism.ac.jp> and Ei-ji Nakama <nakama@ki.rim.or.jp>
-# Maintainer: Ei-ji Nakama <nakama@ki.rim.or.jp>
-# Description: Control the number of threads on 'BLAS' (Aka 'GotoBLAS', 'OpenBLAS', 'ACML', 'BLIS' and 'MKL'). And possible to control the number of threads in 'OpenMP'. Get a number of logical cores and physical cores if feasible.
-# License: AGPL-3
-# URL: http://prs.ism.ac.jp/~nakama/Rhpc/
-# ByteCompile: true
-# NeedsCompilation: yes
-# Packaged: 2018-07-24 04:37:50 UTC; nakama
-# Repository: CRAN
-# Date/Publication: 2018-07-24 12:10:03 UTC
