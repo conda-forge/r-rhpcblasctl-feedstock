@@ -6,7 +6,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rhpcblasctl-f
 About r-rhpcblasctl
 -------------------
 
-Home: http://prs.ism.ac.jp/~nakama/Rhpc/
+Home: https://prs.ism.ac.jp/~nakama/Rhpc/
 
 Package license: AGPL-3.0-only
 
@@ -14,7 +14,7 @@ Summary: Control the number of threads on 'BLAS' (Aka 'GotoBLAS', 'OpenBLAS', 'A
 About r-rhpcblasctl
 -------------------
 
-Home: http://prs.ism.ac.jp/~nakama/Rhpc/
+Home: https://prs.ism.ac.jp/~nakama/Rhpc/
 
 Package license: AGPL-3.0-only
 
