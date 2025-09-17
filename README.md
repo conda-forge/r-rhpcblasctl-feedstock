@@ -13,6 +13,8 @@ Package license: AGPL-3.0-only
 
 Summary: Control the number of threads on 'BLAS' (Aka 'GotoBLAS', 'OpenBLAS', 'ACML', 'BLIS' and 'MKL'). And possible to control the number of threads in 'OpenMP'. Get a number of logical cores and physical cores if feasible.
 
+Development: https://github.com/cran/RhpcBLASctl
+
 About r-rhpcblasctl
 -------------------
 
@@ -21,6 +23,8 @@ Home: https://prs.ism.ac.jp/~nakama/Rhpc/
 Package license: AGPL-3.0-only
 
 Summary: Control the number of threads on 'BLAS' (Aka 'GotoBLAS', 'OpenBLAS', 'ACML', 'BLIS' and 'MKL'). And possible to control the number of threads in 'OpenMP'. Get a number of logical cores and physical cores if feasible.
+
+Development: https://github.com/cran/RhpcBLASctl
 
 Current build status
 ====================
